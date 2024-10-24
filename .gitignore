@@ -7,4 +7,4 @@ reports/
 config.personal.env
 *.log
 demo
-browserstack_sample.py
+*.apk

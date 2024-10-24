@@ -1,10 +1,10 @@
-def abs_path_from_project(relative_path: str):
+def relative_from_root(path: str):
     import python_mobile_test_template
     from pathlib import Path
 
     return (
         Path(python_mobile_test_template.__file__)
-        .parent.parent.joinpath(relative_path)
+        .parent.parent.joinpath(path)
         .absolute()
         .__str__()
     )

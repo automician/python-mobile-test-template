@@ -1,26 +1,17 @@
 import pytest
-from selene.support.shared import browser
-from appium import webdriver
 
-import config
-
-
-@pytest.fixture(scope='session', autouse=True)
-def patch_selene():
-    import python_mobile_test_template.assist.selene.patch_selector_strategy
-    import python_mobile_test_template.assist.selene.patch_element_mobile_commands
+import project
+from python_mobile_test_template import support
+from selene.support._mobile import device
 
 
 @pytest.fixture(scope='function', autouse=True)
-def app_management():
-    driver = webdriver.Remote(
-        config.settings.remote_url, options=config.settings.driver_options
-    )
-
-    browser.config.driver = driver
-    browser.config.timeout = 6
+def driver_management():
+    device.config.driver_options = project.config.to_driver_options()
+    device.config.driver_remote_url = project.config.driver_remote_url
+    device.config.selector_to_by_strategy = support.mobile_selectors.to_by_strategy
+    device.config.timeout = 8.0
 
     yield
 
-    driver.remove_app(config.settings.app_id)
-    driver.quit()
+    device.driver.quit()
