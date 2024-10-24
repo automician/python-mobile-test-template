@@ -483,8 +483,8 @@ typing-extensions = ">=4.12.2"
 [package.source]
 type = "git"
 url = "https://github.com/yashaka/selene.git"
-reference = "a6b1bd4"
-resolved_reference = "a6b1bd46520ad0e93b3c5fd8df2e61e2e97e2f68"
+reference = "047376d"
+resolved_reference = "047376d291c1ad298f61ed58a583e248e5122a8c"
 
 [[package]]
 name = "selenium"
@@ -625,4 +625,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "284651e4e50257c37059d40eb4ee0fb41038ccb95629ebd8e72d056429fba8c1"
+content-hash = "3a81327c75ec5b41ff3465fb0a0c006b252e2a021f9aed8b4c8143045214f014"

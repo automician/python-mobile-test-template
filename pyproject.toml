@@ -9,7 +9,7 @@ packages = [{include = "python_mobile_test_template"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-selene = { git = "https://github.com/yashaka/selene.git", rev = "a6b1bd4" }
+selene = { git = "https://github.com/yashaka/selene.git", rev = "047376d" }
 Appium-Python-Client = "^4.2.0 "
 pytest = "^8.3.3 "
 pytest-xdist = "^3.6.1"
