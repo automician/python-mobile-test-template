@@ -10,7 +10,7 @@ def driver_management():
     device.config.driver_options = project.config.to_driver_options()
     device.config.driver_remote_url = project.config.driver_remote_url
     device.config.selector_to_by_strategy = support.mobile_selectors.to_by_strategy
-    device.config.timeout = 8.0
+    device.config.timeout = project.config.timeout
 
     yield
 

@@ -8,3 +8,6 @@ config.personal.env
 *.log
 demo
 *.apk
+.env
+*.env
+!*.env.example
