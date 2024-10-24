@@ -24,11 +24,13 @@ class Config(pydantic.BaseSettings):
     driver_remote_url: str = 'http://127.0.0.1:4723'
     timeout: float = 6
 
+    # --- App-wise settings --- #
+    app_package: Optional[str] = None
+
     # --- General Capabilities --- #
     newCommandTimeout: Optional[int] = 60
-    app_package: str = 'org.wikipedia.alpha'
-    app: Optional[str] = './app-alpha-universal-release.apk'
-    appWaitActivity = 'org.wikipedia.*'
+    app: Optional[str] = None
+    appWaitActivity: Optional[str] = None
     deviceName: Optional[str] = None
     udid: Optional[str] = None
     noReset: Optional[bool] = None
@@ -136,4 +138,6 @@ dotenv.load_dotenv(
     override=False,
 )
 
-config = Config(dotenv.find_dotenv(f'.env.{Config().context}.defaults', usecwd=True))
+config = Config(
+    dotenv.find_dotenv(f'.env.{Config().context.value}.defaults', usecwd=True)
+)
